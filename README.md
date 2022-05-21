@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hazy
 
-## Getting Started
+このプロジェクトは、[Create React App](https://github.com/facebook/create-react-app)でブートストラップしています。
 
-First, run the development server:
+## 開発について
 
-```bash
-npm run dev
-# or
-yarn dev
+GitHub のワークフローは[Github Flow](https://atmarkit.itmedia.co.jp/ait/articles/1708/01/news015.html)を採用しています。
+
+基本的にブランチと issue は、1 対 1 に対応付けて作成してください。
+
+ブランチ名の命名規則ですが、`feature`ブランチの場合は`feature/issue番号_このブランチで実装する内容の説明`のフォーマットで作成してください。
+
+例えば、issue 番号が`12`で、ログインページを実装する場合は、`feature/12_implementLoginPage`といった具合です。
+
+`master`ブランチ, `develop`ブランチへの直接の`push`は避けて`PR`を作成するようにしてください。
+
+PR 名は`issue名 #issue番号`としてください。
+
+Reviwer には全ての開発メンバーを選択して、全員からの`Approve`後に`Merge`します。
+
+PR の本文には、以下のテンプレートを使用してください。
+
+```md
+# 関連 issue/PR
+
+-
+
+# PR でやったこと
+
+-
+
+# 設計記事/関連情報(slack, 議事録など)
+
+-
+
+# 確認項目
+
+- [ ] [変数名や関数名に情報が詰め込まれている](https://qiita.com/fkrw/items/7646563a2b238fbcff9a#%EF%BC%92%E7%AB%A0%E5%90%8D%E5%89%8D%E3%81%AB%E6%83%85%E5%A0%B1%E3%82%92%E8%A9%B0%E3%82%81%E8%BE%BC%E3%82%80)
+- [ ] [誤解を招く単語を変数名や関数名に使用していない](https://wayasblog.com/readable-code/#toc4)
+- [ ] [必要なコメントを書いている](https://wayasblog.com/readable-code/#toc6)
+- [ ] [正確で簡潔なコメントを書いている](https://wayasblog.com/readable-code/#toc7)
+- [ ] [読みやすい制御フローを書いている](https://wayasblog.com/readable-code/#toc9)
+- [ ] [不要な変数を宣言していない](https://wayasblog.com/readable-code/#toc11)
+- [ ] [汎用コードをモジュール化出来ている](https://wayasblog.com/readable-code/#toc11)
+- [ ] [一度に一つのことを行っている](https://wayasblog.com/readable-code/#toc14)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 利用可能なスクリプト
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+プロジェクトディレクトリで、実行することができます。
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### `npm start`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+開発モードでアプリを実行します。
+[http://localhost:3000](http://localhost:3000) を開くと、ブラウザで表示されます。
+
+編集を行うとページが再読み込みされます。
+また、lint エラーが発生した場合はコンソールに表示されます。
+
+### `npm test`
+
+テストランナーを対話型ウォッチモードで起動します。
+詳しくは[テストの実行](https://facebook.github.io/create-react-app/docs/running-tests)の項を参照してください。
+
+### `npm run build`
+
+本番用のアプリを `build` フォルダにビルドします。
+本番モードで React を正しくバンドルし、最高のパフォーマンスが得られるようにビルドを最適化します。
+
+ビルドは minify され、ファイル名にはハッシュが含まれます。
+アプリをデプロイする準備ができました!
+
+詳細は[deployment](https://facebook.github.io/create-react-app/docs/deployment)のセクションを参照してください。
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)でさらに詳しく学ぶことができます。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+React を学ぶには、[React documentation](https://reactjs.org/)をチェックしてください。
