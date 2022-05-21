@@ -22,19 +22,15 @@ PR の本文には、以下のテンプレートを使用してください。
 
 ```md
 # 関連 issue/PR
-
 -
 
 # PR でやったこと
-
 -
 
 # 設計記事/関連情報(slack, 議事録など)
-
 -
 
 # 確認項目
-
 - [ ] [変数名や関数名に情報が詰め込まれている](https://qiita.com/fkrw/items/7646563a2b238fbcff9a#%EF%BC%92%E7%AB%A0%E5%90%8D%E5%89%8D%E3%81%AB%E6%83%85%E5%A0%B1%E3%82%92%E8%A9%B0%E3%82%81%E8%BE%BC%E3%82%80)
 - [ ] [誤解を招く単語を変数名や関数名に使用していない](https://wayasblog.com/readable-code/#toc4)
 - [ ] [必要なコメントを書いている](https://wayasblog.com/readable-code/#toc6)
