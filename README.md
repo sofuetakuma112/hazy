@@ -1,18 +1,12 @@
 # Hazy
 
-このプロジェクトは、[Create React App](https://github.com/facebook/create-react-app)でブートストラップしています。
-
 ## 開発について
 
-GitHub のワークフローは[Github Flow](https://atmarkit.itmedia.co.jp/ait/articles/1708/01/news015.html)を採用しています。
+GitHub のワークフローは[Github Flow](https://atmarkit.itmedia.co.jp/ait/articles/1708/01/news015.html#02)を採用しています。
 
 基本的にブランチと issue は、1 対 1 に対応付けて作成してください。
 
-ブランチ名の命名規則ですが、`feature`ブランチの場合は`feature/issue番号_このブランチで実装する内容の説明`のフォーマットで作成してください。
-
-例えば、issue 番号が`12`で、ログインページを実装する場合は、`feature/12_implementLoginPage`といった具合です。
-
-`master`ブランチ, `develop`ブランチへの直接の`push`は避けて`PR`を作成するようにしてください。
+`master`ブランチへの直接の`push`は避けて`PR`を作成するようにしてください。
 
 PR 名は`issue名 #issue番号`としてください。
 
@@ -45,18 +39,13 @@ PR の本文には、以下のテンプレートを使用してください。
 
 プロジェクトディレクトリで、実行することができます。
 
-### `npm start`
+### `npm run dev`
 
 開発モードでアプリを実行します。
 [http://localhost:3000](http://localhost:3000) を開くと、ブラウザで表示されます。
 
 編集を行うとページが再読み込みされます。
 また、lint エラーが発生した場合はコンソールに表示されます。
-
-### `npm test`
-
-テストランナーを対話型ウォッチモードで起動します。
-詳しくは[テストの実行](https://facebook.github.io/create-react-app/docs/running-tests)の項を参照してください。
 
 ### `npm run build`
 
@@ -67,9 +56,3 @@ PR の本文には、以下のテンプレートを使用してください。
 アプリをデプロイする準備ができました!
 
 詳細は[deployment](https://facebook.github.io/create-react-app/docs/deployment)のセクションを参照してください。
-
-## Learn More
-
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)でさらに詳しく学ぶことができます。
-
-React を学ぶには、[React documentation](https://reactjs.org/)をチェックしてください。
