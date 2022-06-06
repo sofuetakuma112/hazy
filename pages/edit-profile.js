@@ -21,17 +21,17 @@ const schema = yup.object({
   file: yup
     .mixed()
     .test(
-      'is-big-file',
-      'ファイルはjpegかpngで送信してください',
+      'is-invalid-file-type',
+      'jpegもしくはpng形式のファイルを選択してください',
       checkIfFilesAreCorrectType
     ),
 });
 
 //プロフィール画像のルール
-export function checkIfFilesAreCorrectType(file) {
+export function checkIfFilesAreCorrectType(files) {
   let valid = true;
-  if (file) {
-    if (!['image/jpeg', 'image/png'].includes(file.type)) {
+  if (files.length > 0 && files[0]) {
+    if (!['image/jpeg', 'image/png'].includes(files[0].type)) {
       valid = false;
     }
   }
@@ -46,6 +46,31 @@ function EditProfile() {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  // { registerName: "file", children: ... }
+  const FileInput = ({ registerName }) => (
+    <label
+      style={{
+        lineHeight: 1.5,
+        border: '1px solid #ffffff',
+        borderRadius: '5px',
+        boxShadow: '2px 2px 5px 0px rgba(200, 200, 200, 1)',
+        fontFamily: 'Times New Roman',
+        padding: '10px 40px',
+        color: '#ffffff',
+        backgroundColor: '#19B4CE',
+        cursor: 'pointer',
+        width: '200px',
+      }}
+    >
+      <input
+        type="file"
+        style={{ display: 'none' }}
+        {...register(registerName)}
+      />
+      ファイルを選択
+    </label>
+  );
 
   // フォーム送信時の処理
   const onSubmit = (data) => {
@@ -76,27 +101,7 @@ function EditProfile() {
           helperText={errors.name?.message}
         />
         <StyledFormLabel>プロフィール画像</StyledFormLabel>
-        <label
-          style={{
-            lineHeight: 1.5,
-            border: '1px solid #ffffff',
-            borderRadius: '5px',
-            boxShadow: '2px 2px 5px 0px rgba(200, 200, 200, 1)',
-            fontFamily: 'Times New Roman',
-            padding: '10px 40px',
-            color: '#ffffff',
-            backgroundColor: '#19B4CE',
-            cursor: 'pointer',
-            width: '200px',
-          }}
-        >
-          <input
-            type="file"
-            style={{ display: 'none' }}
-            {...register('file')}
-          />
-          ファイルを選択
-        </label>
+        <FileInput registerName="file" />
         {/* エラーメッセージ */}
         <StyledErrorText>{errors.file?.message}</StyledErrorText>
 
